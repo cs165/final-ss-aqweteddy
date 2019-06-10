@@ -18,9 +18,18 @@ app.use(express.static('public'));
 
 // TODO(you): Add at least 1 GET route and 1 POST route.
 
+
 // Please don't change this; this is needed to deploy on Heroku.
 const port = process.env.PORT || 3000;
 
 app.listen(port, function () {
   console.log(`Server listening on port ${port}!`);
 });
+
+app.get('/getev', async function(req, res) {
+  res.json({ response: 'get' })
+})
+
+app.post('/postev', async function (req, res) {
+  res.json({ response: 'post' })
+})
